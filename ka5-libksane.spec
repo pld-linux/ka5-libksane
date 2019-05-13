@@ -53,7 +53,7 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
-	-DKDE_INSTALL_DOCBUNDLEDIR=%{_kdedocdir} \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
