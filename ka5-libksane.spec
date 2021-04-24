@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libksane
 Summary:	libksane
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	32725312acbc69c38a0436d5f19bb031
+# Source0-md5:	7310504b9439a114d49d12d9d228056d
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel >= 5.12.3
@@ -73,8 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libKF5Sane.so.5
-%attr(755,root,root) %{_libdir}/libKF5Sane.so.5.*.*
+%attr(755,root,root) %{_libdir}/libKF5Sane.so.*.*.*
+%ghost %{_libdir}/libKF5Sane.so.5
 %{_iconsdir}/hicolor/16x16/actions/black-white.png
 %{_iconsdir}/hicolor/16x16/actions/color.png
 %{_iconsdir}/hicolor/16x16/actions/gray-scale.png
