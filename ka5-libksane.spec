@@ -1,15 +1,15 @@
-%define		kdeappsver	21.08.1
+%define		kdeappsver	21.08.2
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libksane
 Summary:	libksane
 Name:		ka5-%{kaname}
-Version:	21.08.1
+Version:	21.08.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	fa9a8b61e94231a1e91e332b8d42f09e
+# Source0-md5:	966f55726eea52b2af3549333068440b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel >= 5.12.3
