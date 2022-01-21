@@ -5,7 +5,7 @@
 Summary:	libksane
 Name:		ka5-%{kaname}
 Version:	21.12.1
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -28,6 +28,7 @@ BuildRequires:	sane-backends-devel
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Conflicts:	kde4-libksane >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
