@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.04.3
+%define		kdeappsver	23.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libksane
 Summary:	libksane
 Name:		ka5-%{kaname}
-Version:	23.04.3
+Version:	23.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	c752c0a574b9ab37ff9eae3c8b711e5e
+# Source0-md5:	a0b2b3b32c0da75a7edb4fa357477eef
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel >= 5.12.3
@@ -57,18 +57,16 @@ Pliki nagłówkowe dla programistów używających %{kaname}.
 %setup -q -n %{kaname}-%{version}
 
 %build
-install -d build
-cd build
 %cmake \
+	-B build \
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DHTML_INSTALL_DIR=%{_kdedocdir} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	..
-%ninja_build
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+%ninja_build -C build
 
 %if %{with tests}
-ctest
+ctest --test-dir build
 %endif
 
 
@@ -100,6 +98,5 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/KF5/KSane
-%{_includedir}/KF5/ksane_version.h
 %{_libdir}/cmake/KF5Sane
 %{_libdir}/libKF5Sane.so
