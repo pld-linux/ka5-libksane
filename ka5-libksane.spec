@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.0
+%define		kdeappsver	23.08.1
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libksane
 Summary:	libksane
 Name:		ka5-%{kaname}
-Version:	23.08.0
+Version:	23.08.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a0b2b3b32c0da75a7edb4fa357477eef
+# Source0-md5:	473481e10d3de547472fbf2cd96bb66e
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel >= 5.12.3
